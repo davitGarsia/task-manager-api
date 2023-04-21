@@ -32,7 +32,7 @@ export class AuthService {
   async signup(signupDto: SignupDto): Promise<LoginPayloadDto> {
     try {
       const roles = await this.userRepository.manager.find(Role, {
-        where: { name: 'Admin' },
+        where: { name: 'Super Admin' },
       });
 
       const user = new User();
